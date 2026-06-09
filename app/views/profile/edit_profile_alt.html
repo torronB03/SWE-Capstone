@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body class="page-edit_profile">
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">← Back</a>
+
+    <main>
+        <div class="edit-profile-container">
+            <h2>Edit Profile</h2>
+            <form action="LoginServlet?action=updateProfile" method="POST" id="editProfileForm" required>
+                <!-- PROFILE FIELDS -->
+                <p style="text-align: center;">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" required>
+                <small id="emailFeedback" class="feedback"></small>
+
+                <label for="firstName">Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                </p>
+                
+                <label for="lastName">Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                </p>
+
+                <p style="text-align: center;">
+                    <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <small id="usernameFeedback" class="feedback"></small>
+
+                <label for="over18">Over 18:</label required>
+                <select id="over18" name="over18">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+                <label for="transport">Mode of Transportation:</label>
+                <select id="transport" name="transport" required>
+                    <option value="Car">Car</option>
+                    <option value="Walk">Walk</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Bus">Bus</option>
+                </select>
+
+
+                <!-- PASSWORD CHANGE FIELDS -->
+                <h3>Change Password</h3>
+
+                <label for="currentPassword">Current Password:</label>
+                <input type="password" id="currentPassword" name="currentPassword" placeholder="Enter current password" required>
+
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" name="newPassword" placeholder="Enter new password" required>
+                <small id="passwordFeedback" class="feedback"></small>
+
+                <label for="confirmNewPassword">Confirm New Password:</label>
+                <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirm new password" required>
+                <small id="confirmPasswordFeedback" class="feedback"></small>
+
+
+                <p style="text-align: center;">
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <!--FOOTER-->
+    <div id="footer"></div>
+
+    <script src="../js/fetch-partials.js"></script>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    setTimeout(() => {
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+
+      const isAuthenticated = getCookie("loggedIn");
+      const footerAuthLinks = document.getElementById("footerAuthLinks");
+
+      if (isAuthenticated === "true" && footerAuthLinks) {
+        footerAuthLinks.innerHTML = `<a href="#" id="footerLogout">Sign Out</a>`;
+
+        document.getElementById("footerLogout").addEventListener("click", function (e) {
+          e.preventDefault();
+          fetch("../user-api/logout").then(() => {
+            window.location.href = "../pages/home.html";
+          });
+        });
+      }
+    }, 300);
+  });
+</script>
+
+</body>
+</html>

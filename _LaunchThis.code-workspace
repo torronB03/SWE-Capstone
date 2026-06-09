@@ -1,0 +1,73 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Build WAR file",
+				"type": "shell",
+				"command": "${workspaceFolder}/scripts/build-war-X.sh",
+				"options": {
+				"shell": {
+					"executable": "bash"
+					}
+				},
+				"windows": {
+					"options": {
+						"shell": {
+							"executable": "C:\\Program Files\\Git\\bin\\bash.exe"
+						}
+					}
+				},
+				"problemMatcher": [],
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				}
+
+			},
+			{
+				"label": "Deploy webapp to Docker",
+				"type": "shell",
+				"command": "${workspaceFolder}/scripts/mkdock.sh",
+				"options": {
+				"shell": {
+					"executable": "bash"
+					}
+				},
+				"windows": {
+					"options": {
+						"shell": {
+							"executable": "C:\\Program Files\\Git\\bin\\bash.exe"
+						}
+					}
+				},
+				"problemMatcher": [],
+				"group": {
+					"kind": "test",
+					"isDefault": true
+				}
+
+			}
+		]
+	},
+	"settings":
+		{
+			"files.autoSave": "onWindowChange",
+			"files.hotExit": "off",
+			"files.associations": {
+				"iostream": "cpp"
+			},
+			"files.exclude": {
+				"**/.classpath": true,
+				"**/.project": true,
+				"**/.settings": true,
+				"**/.factorypath": true
+			},
+			"java.configuration.updateBuildConfiguration": "disabled",
+		}
+}

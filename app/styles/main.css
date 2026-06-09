@@ -1,0 +1,2248 @@
+/* =============== Global Styles =============== */
+
+:root {
+    --maroon: #660000; /* Page Borders */
+    --gold: #fbd254; /* Buttons */
+    --white: white; /* Backgrounds */
+    --off-white: #faf9f6; /* Text Fields */
+    --light-gray: #aba09c; /* Miscellaneous Borders */
+    --dark: #5c4944; /* Misc. Borders 2 */ 
+    --light-red: #f09191; /* Menus */
+    --black: black; /* Text */
+    --title-font: 'Zilla Slab'; /* Current Standard Font (may be replaced) */
+    --standard-shadow: rgba(0, 0, 0, 0.1) /* Basic Shadow Effect */
+    /* --blue-shadow: rgba(0, 140, 186, 0.5) unused Blue Glow Effect */
+}
+
+/* This controls the background color 
+and generic text color of most pages */
+body {
+    font-family: var(--title-font);
+    /*font-family: Arial, sans-serif;*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--off-white);
+    color: var(--black); 
+}
+
+
+/*-------------------------------*/
+/*            HEADER             */ 
+/*-------------------------------*/
+
+header {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: var(--maroon);
+    padding: 3px 15px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 250px; /* logo size */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.logo img:hover {
+    transform: scale(1.2);
+}
+
+/* Navigation Bar */
+nav {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+/* Navigation Tabs */
+nav a {
+    text-decoration: none;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 24px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+/* Nav Tab Highlights */
+nav a:hover {
+    text-decoration: underline;
+    color: var(--off-white);
+}
+
+.profile {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile img {
+    height: 50px; /* Profile picture size */
+    border-radius: 50%; /* Makes it a circle */
+    align-items: end;
+}
+
+/* Signup & Login Tab */
+.profile a {
+    text-decoration: none;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+/* Signup & Login Tab Highlights */
+nav a:hover {
+    text-decoration: underline;
+    color: var(--off-white);
+}
+
+/* Header Adjustments for Login and Signup Pages */
+.page-login .profile,
+.page-signup .profile {
+    /* Hides profile section */
+    /* display: none; */
+}
+
+
+/*.page-login .header-content,
+.page-signup .header-content {
+    /* re-centers the content */
+    /*margin-right: 28.5%;
+} */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+
+/*-------------------------------*/
+/*          BACK BUTTON          */ 
+/*-------------------------------*/
+
+.back-button {
+    display: inline-block;
+    padding: 10px;
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 45px;
+    text-decoration: none;
+    margin: 1rem;
+}
+
+.back-button:hover {
+    background-color: var(--off-white);
+ }
+
+/*-------------------------------*/
+/*           FOOTER              */ 
+/*-------------------------------*/
+
+footer {
+    background-color: var(--maroon);
+    color: var(--off-white);
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    font-size: 16px;
+    margin: auto;
+    margin-top: auto;
+}
+
+footer a {
+    color: var(--off-white);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Spaces out words evenly */
+}
+
+.footer-section {
+    margin: 10px 0; /* Adjust margins */
+    text-align: left;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically */
+        align-items: center; /* Center items in each section */
+        margin-left: 25px; }
+    .footer-section {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* tablet */
+@media only screen and (max-width: 1024px) {
+    
+}
+
+/* =============== Page Specific Styles =============== */
+
+
+/*-------------------------------*/
+/*          HOME PAGE            */ 
+/*-------------------------------*/
+
+/* Home Page Title */
+.page-home h1.homeTitle {
+    position: relative;
+    color: var(--black);
+    text-align: left;
+    margin: 20px 4rem;
+    font-size: 3.5rem;
+}
+
+.page-home h2 {
+    text-align: center;
+    padding: 1rem 3rem;
+}
+
+/* Homepage Blurb 
+"Establish connections. Get the help you need. Volunteer." 
+Please change this thing's location, 
+the clip art really masks it no matter the color */
+.page-home p.homeTitle {
+    position: relative;
+    color: var(--gold);
+    text-align: left;
+    margin-left: 4rem;
+    font-size: 1.5rem;
+}
+
+/* Background */
+.page-home #bg {
+    background: url(../assets/HeroImageCareConnective3.png) center/cover no-repeat;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+
+/* Filter Button and Dropdown */
+.page-home .filterBtn {
+    padding: 0.5rem 1rem;
+    background-color: var(--gold);
+    border-radius: 10px;
+    color: var(--black);
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.page-home .filterBtn:hover, .filterBtn:focus {
+    color: var(--black);
+    background-color: var(--off-white);
+    outline: none;
+}
+
+.page-home .filterDropdown {
+    display: none;
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--light-red);
+    border: 1px solid var(--dark);
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px var(--standard-shadow);
+    border-radius: 5px;
+    width: 22rem;
+}
+
+.page-home .filterDropdown.show {
+    display: block;
+}
+
+.page-home .button-group {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.page-home .cancelBtn, .applyBtn {
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.page-home .applyBtn {
+    background-color: var(--gold);
+    color: var(--black);
+}
+
+.page-home .cancelBtn {
+    background-color: transparent;
+    color: var(--off-white);
+}
+
+.page-home button:hover {
+    /* opacity: 0.8; */
+}
+
+/* Search Bar */
+.page-home form.search {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.page-home form.search input[type=text] {
+    padding: 1rem;
+    width: 40%;
+    font-size: 1rem;
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+}
+
+/* Feed Container */
+.page-home #feed-container {
+    padding: 2rem;
+    background-color: var(--light-red);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* space between cards */
+}
+
+.page-home .feed-item {
+    background-color: var(--off-white);
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px; /* limit max width to center cards nicely */
+    box-sizing: border-box;
+}
+
+.page-home .feed-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 2rem;
+    border-radius: 8px;
+}
+
+.page-home .feed-item-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.page-home .feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.page-home .feed-header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--black);
+    margin: 0;
+    font-family: var(--title-font);
+}
+
+.page-home .feed-header h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--dark);
+    margin: 0;
+    font-style: italic;
+}
+
+/* All Other Event Text */
+.page-home .feed-item p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: var(--dark);
+}
+
+/* Pagination (Page Numbers) */
+.page-home .pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+/* Other Pages */
+.page-home .pagination a {
+    color: var(--black);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+/* Current Page */
+.page-home .pagination a.active {
+    background-color: var(--maroon);
+    color: var(--off-white);
+}
+
+.page-home .pagination a:hover:not(.active) {
+    background-color: var(--gold);
+}
+
+.event-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.02);
+}
+
+.event-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.event-details {
+    margin-top: 0.5rem;
+}
+
+.event-details p {
+    margin: 0.2rem 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .page-home h1.homeTitle, .page-home p.homeTitle {
+        margin-left: 1.5rem;
+        font-size: 2rem;
+    }
+    .page-home .feed-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .page-home .feed-item img {
+        margin: 0 auto 1rem;
+    }
+    .page-home form.search input[type=text] {
+        width: 70%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*          EVENT PAGE           */ 
+/*-------------------------------*/
+
+/* Cannot currently access event page */
+
+.page-event body {
+    font-family: var(--title-font);
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack form and footer vertically */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+}
+
+.page-event .button-toggle {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+}
+
+.page-event .button-toggle button {
+    padding: 12px 25px; /* Adjust padding for better size */
+    margin: 0 20px; /* Adjust margin for spacing */
+    border: 1px solid var(--black);
+    background-color: var(--gold);
+    cursor: pointer;
+    font-size: 1em; /* Add font-size for better readability */
+    border-radius: 5px; /* Add slight rounded corners */
+    transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.page-event .button-toggle button:hover {
+    background-color: var(--off-white); /* Slightly darker on hover */
+}
+
+.page-event .button-toggle button.active {
+    background-color: var(--off-white);
+    color: var(--black);
+    border: none;
+}
+
+.page-event .container,
+.page-learn-more #edit-event-popup,
+.page-learn-more #edit-volunteer-popup {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--standard-shadow);
+    width: 400px;
+    max-width: 90%;
+    margin: 20px auto; /* Center the form horizontally */
+    border: 20px solid var(--maroon); 
+}
+
+.page-event h1,
+.page-learn-more #edit-event-popup h1,
+.page-learn-more #edit-volunteer-popup h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-event label,
+.page-learn-more #edit-event-popup label,
+.page-learn-more #edit-volunteer-popup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.page-event input[type="text"],
+.page-event input[type="date"],
+.page-event input[type="time"],
+.page-event textarea,
+.page-learn-more input[type="text"],
+.page-learn-more input[type="date"],
+.page-learn-more input[type="time"],
+.page-learn-more textarea {
+    width: calc(100% - 12px);
+    padding: 6px;
+    margin-bottom: 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+}
+
+.page-event input[type="submit"],
+.page-learn-more input[type="submit"] {
+    background-color: var(--maroon);
+    color: var(--white);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.page-event input[type="submit"]:hover,
+.page-learn-more input[type="submit"]:hover {
+    background-color: var(--dark);
+}
+
+.page-event #message {
+    margin-top: 10px;
+    text-align: center;
+}
+
+/*  THIS IS FOR ADDING ORGANIZERS AND VOLUNTEERS    */
+.page-event #organizersList, #volunteersList {
+    margin-top: 10px;
+    border: 1px solid var(--light-gray);
+    padding: 5px;
+    min-height: 40px; /* Adjust as needed */
+    display: flex; /* Display organizers horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+}
+
+.page-event #organizersList div, #volunteersList div {
+    background-color: var(--off-white); /* Slightly more noticeable color */
+    padding: 5px;
+    margin: 3px;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid var(--light-red); /* Light border for better visibility */
+}
+
+.page-event #addOrganizerBtn, #addVolunteerBtn {
+    padding: 5px 10px;
+    background-color: var(--maroon); 
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.page-event #addOrganizerBtn:hover, #addVolunteerBtn:hover {
+    background-color: var(--gold); 
+}
+
+.page-event #addOrganizerBtn:focus, #addVolunteerBtn:focus {
+    outline: 2px solid var(--light-red); /* Blue outline to indicate focus */
+}
+
+.page-event #newOrganizer, #newVolunteer {
+    padding: 5px;
+    margin-right: 5px;
+    border: 1px solid var(--light-gray);
+    border-radius: 3px;
+}
+
+.page-event #eventFormFields label {
+    display: block; /* Make labels appear on their own line */
+    margin-top: 10px;
+}
+
+.page-event #eventFormFields input[type="text"],
+.page-event #eventFormFields input[type="date"],
+.page-event #eventFormFields input[type="time"],
+.page-event #eventFormFields input[type="number"],
+.page-event #eventFormFields textarea {
+    width: 100%; /* Make input fields take full width */
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--light-gray);
+    border-radius: 3px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.page-event #eventFormFields input[type="submit"] {
+    background-color: var(--light-red); /* Blue */
+    color: var(--white);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.page-event #eventFormFields input[type="submit"]:hover {
+    background-color: var(--dark); /* Darker blue */
+}
+
+.page-event #organizersList {
+    display: flex; /* Display organizers horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+}
+
+.page-event .organizer-box {
+    color: var(--black); /* Black text */
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 3px;
+    display: inline-block; /* Display as inline-block elements */
+}
+
+/* Focus state for input fields */
+.page-event input[type="text"]:focus, input[type="date"]:focus, input[type="time"]:focus, textarea:focus {
+    border-color: var(--light-red); /* Highlight the field with a blue border when focused */
+    box-shadow: 0 0 5px var(--standard-shadow); /* Optional: Add a glow effect */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .page-event .container {
+        width: 95%; /* Make the form take up more width on smaller screens */
+        padding: 15px; 
+    }
+
+    .page-event input[type="text"],
+    .page-event input[type="date"],
+    .page-event input[type="time"],
+    .page-event textarea {
+        width: calc(100% - 12px); /* Maintain full width */
+    }
+
+    .page-event h1 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*       USER ACCOUNT PAGE       */ 
+/*-------------------------------*/
+
+.page-account body {
+    font-family: var(--title-font);
+    background-color: var(--off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+.page-account .form-container {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--standard-shadow);
+    width: 400px;
+}
+  
+.page-account h1 {
+    margin-bottom: 20px;
+}
+  
+.page-account form input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+  
+.page-account button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.page-account button:hover {
+    background-color: var(--off-white);
+}
+  
+.page-account p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*        USER DASHBOARD         */ 
+/*-------------------------------*/
+
+/* "Welcome back" text */
+.page-dashboard h1.homeTitle {
+    position: relative;
+    color: var(--black);
+    text-align: left;
+    margin: 20px 4rem;
+    font-size: 2rem;
+}
+
+/* Username Text */
+.page-dashboard h2.homeTitle {
+    position: relative;
+    color: var(--black);
+    text-align: center;
+    margin: 20px 4rem;
+    font-size: 3rem;
+}
+
+/* "Here are your upcoming events:" */
+.page-dashboard h3.homeTitle {
+    position: relative;
+    color: var(--black);
+    text-align: left;
+    margin: 20px 4rem;
+    font-size: 1em;
+    word-break: break-word;
+    inline-size: 15ch;
+}
+
+.page-dashboard #upcomingEventContainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 70%;
+    max-width: 90%;
+    margin: 20px auto; /* Center the form horizontally */
+}
+
+/* Upcoming Events Box */
+.page-dashboard #upcomingEvent {
+    background-color: var(--light-red);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--standard-shadow);
+    width: 40%;
+    max-width: 90%;
+    /* border: 5px solid var(--dark);  */
+}
+
+.page-dashboard p.eventContainerText {
+    position: relative;
+    color: var(--black);
+    text-align: center;
+    margin: 20px 4rem;
+    font-size: 1rem;
+}
+
+/* General Feed Section Background */
+.page-dashboard #feed-container {
+    display: flex;
+    flex-direction: right;
+    justify-content: flex-start;
+    padding: 2rem;
+    background-color: var(--off-white);
+    height: 100%;
+    justify-content: space-between;
+}
+
+/* Inner Listings Margin */
+.page-dashboard #feedList {
+    flex: 1;
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    background-color: var(--light-red);
+    display: flex;
+    flex-direction: column;
+}
+
+.page-dashboard #sidebarContainer {
+    display: flex;
+    flex-direction: column; /* Stack sidebars vertically */
+    gap: 10px; /* Space between sidebars */
+    width: 200px;
+}
+
+/* Feed Item Background */
+.page-dashboard .feed-item {
+    background-color: var(--off-white);
+    padding: 2rem;
+    margin: 1rem auto;
+    border-radius: 8px;
+    max-width: 100%;
+    box-shadow: 0 2px 4px var(--standard-shadow);    
+}
+
+.page-dashboard .feed-item img {
+    width: 200px;       /* You can adjust the size of the image */
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;  /* spacing below the image */
+}
+
+.page-dashboard .filterText {
+    position: relative;
+    color: var(--black);
+    text-align: left;
+    font-size: 1em;
+    word-break: break-word;
+    inline-size: 15ch;
+}
+
+/* Left-Side Explore Sidebar */
+.page-dashboard .explore-sidebar {
+    flex: 0 0 150px;
+    gap: 20px;
+    justify-content: center;
+    background-color: var(--off-white);
+    padding: 20px;
+    border-radius: 8px;
+    width: 150px;
+    position: relative;
+    text-align: center;
+}
+
+/* Buttons Under "Explore" */
+.page-dashboard .explore-button {
+    background-color: var(--gold);
+    color: var(--black);
+    text-align: center;
+    border-radius: 90px;
+    width: 150px;
+    height: 150px;
+    border: 3px solid var(--black); 
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.page-dashboard .explore-button:hover {
+    background-color: var(--off-white);
+}
+
+/* Line Under "Explore" */
+.page-dashboard .explore-sidebar h3 {
+    margin: 1rem;
+    color: var(--black);
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    @media (max-width: 768px) {
+        .page-dashboard #upcomingEventContainer {
+            flex-direction: column; 
+            align-items: center;
+            width: 80%;
+        }
+    
+        .page-dashboard #upcomingEvent {
+            width: 100%; 
+            padding: 15px;
+        }
+    
+        .page-dashboard .explore-sidebar {
+            width: 100%;
+            padding: 15px;
+        }
+    
+        .page-dashboard .feed-item {
+            margin: 10px;
+            padding: 1.5rem;
+        }
+    
+        .page-dashboard .explore-button {
+            width: 120px;
+            height: 120px;
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*      FILTER SIDEBAR
+- used in search, dashboard, and events     
+/*-------------------------------*/
+
+/* Affects explore tab options sidebar */
+.filter-sidebar {
+    flex: 0 0 150px;
+    background-color: var(--light-red);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--standard-shadow);
+    width: 150px;
+    border: 5px solid var(--light-red);
+    position: relative;
+}
+
+/* Affects "Filter by..." menu */
+.filter-sidebar .filter-dropdown {
+    /* display: none; */
+    position: relative;
+    z-index: 1;
+    background-color: var(--off-white);
+}
+
+/* Affects option colors for options sidebar */
+.filter-sidebar .filterBtn {
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    text-align: left;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.filter-sidebar .filterBtn:hover {
+    background-color: var(--off-white);
+}
+.map-ui {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--off-white);
+    padding: 15px;
+    border-right: 1px solid var(--light-gray);
+}
+
+.map-container {
+    flex-grow: 1;
+    position: relative;
+}
+
+.search-box {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--white);
+    padding: 10px;
+    z-index: 1000;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--standard-shadow);
+}
+
+/* === Map UI Layout === */
+.map-ui {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--off-white);
+}
+
+/* === Sidebar Filters === */
+.sidebar {
+  flex: 1;
+  max-width: 250px;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--standard-shadow);
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: var(--dark);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+/* === Map Container === */
+.map-container {
+  flex: 3;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px var(--standard-shadow);
+}
+
+/* === Search Box === */
+.search-box {
+  display: flex;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.search-box input[type="text"] {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--off-white);
+}
+
+.search-box button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--gold);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: var(--off-white);
+}
+
+/* === Map Styling === */
+#map {
+  width: 100%;
+  height: 500px;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+}
+
+/* Search Section */
+.search-section {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.search-section input[type="text"] {
+    padding: 1rem;
+    width: 60%;
+    border: 1px solid var(--off-white);
+    border-radius: 8px;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+.search-section button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--gold);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-section button:hover {
+    background-color: var(--off-white);
+}
+
+/* Filter Sidebar */
+.sidebar {
+    background-color: var(--off-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--standard-shadow);
+}
+
+/* Search Results Section */
+#search-results {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.result-item {
+    background-color: var(--white);
+    border: 1px solid var(--off-white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px var(--standard-shadow);
+    transition: transform 0.2s;
+}
+
+.result-item:hover {
+    transform: scale(1.01);
+}
+
+.result-item h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--light-red);
+}
+
+.result-item p {
+    margin: 0.3rem 0;
+    color: var(--dark);
+}
+
+/* Map */
+#map {
+    margin-top: 2rem;
+    border: 2px solid var(--light-gray);
+    border-radius: 8px;
+}
+
+/* =============== Layout =============== */
+.map-ui {
+    display: flex;
+    flex-wrap: wrap;  /* Allow items to wrap on smaller screens */
+    gap: 1rem;
+    padding: 2vw;
+}
+
+.sidebar {
+    flex: 1 0 250px; /* Allow sidebar to shrink or grow */
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--standard-shadow);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--light-gray);
+    padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.sidebar input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+  
+  /* =============== Map Container =============== */
+  .map-info-wrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: var(--off-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 5px var(--standard-shadow);
+  }
+  
+  .map-section {
+    flex: 0 0 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #map {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+    border: 1px solid var(--light-gray);
+  }
+  
+  .directions-link {
+    margin-top: 10px;
+    color: var(--accent-red);
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .details-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .details-section h2, .details-section h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--dark);
+  }
+  
+  .details-section p {
+    margin: 0.6rem 0;
+  }
+  
+  .button-row {
+    margin-top: 1rem;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .save-button,
+  .signup-button,
+  .edit-button {
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .save-button {
+    background-color: var(--mustard);
+    color: var(--dark);
+  }
+  
+  .signup-button {
+    background-color: var(--light-blue);
+  }
+  
+  .edit-button {
+    background-color: var(--black);
+    color: var(--off-white);
+  }
+  
+
+/* =============== Search Box =============== */
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.search-box input[type="text"] {
+    flex: 1;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+}
+
+.search-box button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: var(--gold);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: var(--off-white);
+}
+
+/* =============== Search Results =============== */
+  #search-results {
+    margin: 2rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--standard-shadow);
+}
+
+.result-item {
+    border-bottom: 1px solid var(--off-white);
+    padding: 1rem 0;
+}
+
+.result-item h3 {
+    margin: 0 0 0.25rem;
+    color: var(--light-red);
+}
+
+.result-item p {
+    margin: 0.25rem 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .map-ui {
+        flex-direction: column;
+    }
+    
+    .sidebar, .map-container {
+        max-width: 100%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*        EXPLORE PAGE           */ 
+/*-------------------------------*/
+
+/* "Explore Events Near You!" text */
+.page-explore .exploreTitle {
+    position: relative;
+    color: var(--black);
+    text-align: center;
+    margin: 20px 2rem;
+    font-family: var(--title-font);
+    font-size: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px dashed var(--light-red);
+}
+
+/* Container for buttons to stack them vertically */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons on top of each other */
+    align-items: flex-end; /* Align buttons to the right */
+    gap: 10px; /* Adds spacing between buttons */
+    margin-top: 10px;
+    margin-left: 85%;
+}
+
+/* General button styling */
+.page-explore .save-button,
+.page-learn-more .save-button,
+.page-explore .signup-button,
+.page-learn-more .signup-button,
+.page-learn-more .editInfo-button {
+    background-color: var(--gold);
+    color: var(--black);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 90px;
+    width: 120px;
+    height: 40px;
+    border: 3px solid var(--black); 
+    cursor: pointer;
+    position: inherit;
+}
+
+.page-explore .save-button a:hover,
+.page-learn-more .save-button a:hover,
+.page-explore .signup-button a:hover,
+.page-learn-more .signup-button a:hover,
+.page-learn-more .editInfo-button a:hover {
+    background-color: var(--off-white);
+}
+
+/* Learn More button */
+.page-explore .learnmore-button {
+    background-color: var(--black);
+    color: var(--off-white);
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: inherit;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.feed-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+    border: 2px solid var(--light-red);
+    border-radius: 12px;
+    background-color: var(--off-white);
+    text-align: left;
+    padding: 1rem;
+    margin: 1rem auto; /* remove 'auto' to stretch full width */
+    width: 80%;     /* make it full width */
+    max-width: 1000px; 
+    gap: 20px; /* space between image and content */
+}
+
+/* Event icon */
+.feed-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+/* Content area next to the image */
+.feed-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Top section: Title and Date side by side */
+.feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Event title */
+.feed-header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--black);
+    margin: 0;
+    font-family: var(--title-font);
+}
+
+/* Event date */
+.feed-header h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--dark);
+    margin: 0;
+    font-style: italic;
+}
+
+/* Body content */
+.feed-content p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: var(--dark);
+}
+
+/* Sign In Popup from clicking Save or Sign Up */
+.page-explore #account-popup,
+.page-learn-more #account-popup {
+    /* hidden by default until enabled */
+    position: fixed;
+    background-color: var(--light-red);
+    color: var(--black);
+    font-size: 0.6rem;
+    padding: 5vw;
+    width: 25vw;
+    max-width: 400px;
+    height: 25vh;
+    min-height: 30vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 9999;
+    border-radius: 8px;
+    /* Flexbox for consistent spacing */
+    display: none;
+    flex-direction: column;
+    justify-content: center; /* Ensures content is centered vertically */
+    align-items: center; /* Ensures content is centered horizontally */
+    font-family: var(--title-font);
+}
+
+.page-learn-more #account-popup h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0.8rem;
+}
+
+/* Log In Prompt */
+.page-explore #account-popup h1 a,
+.page-learn-more #account-popup h1 a {
+    color: var(--maroon);
+    font-family: var(--title-font);
+    margin-bottom: 100%;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.page-explore #account-popup h1 a:hover,
+.page-learn-more #account-popup h1 a:hover {
+    color: var(--off-white);
+
+}
+
+/* "Don't have an account?" */
+.page-explore #account-popup h2,
+.page-learn-more #account-popup h2 {
+    font-family: var(--title-font);
+    margin-bottom: 100%;
+    text-align: center;
+    font-size: 1.0rem;
+}
+
+.page-learn-more #account-popup h2 {
+    margin-top: -16.6rem;
+}
+
+/* Sign Up Prompt */
+.page-explore #account-popup h2 a,
+.page-learn-more #account-popup h2 a {
+    color: var(--maroon);
+    font-family: var(--title-font);
+    margin-bottom: 100%;
+    text-align: center;
+    font-size: 1.0rem;
+}
+
+.page-explore #account-popup h2 a:hover,
+.page-learn-more #account-popup h2 a:hover {
+    color:var(--off-white);
+
+}   
+
+/* Popup Menu X */
+.page-explore .close-btn,
+.page-learn-more .close-btn {
+    position: absolute;
+    background: none;
+    border: none;
+    color: var(--maroon);
+    font-weight: bold;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.page-explore .close-btn:hover,
+.page-learn-more .close-btn:hover {
+    color:var(--off-white);
+}
+
+/* Overlay over rest of page while popup menu is active */
+.page-explore #overlay,
+.page-learn-more #overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.4;
+    z-index: 9998;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*       LEARN MORE PAGE         */ 
+/*-------------------------------*/
+
+.page-learn-more .directions {
+    margin-top: -3.5rem;
+}
+
+/* Location image border */
+.page-learn-more .directions img {
+    border: 3px solid var(--light-red);
+    margin-top: 5%; 
+    margin-left: 8%;
+    width: 20rem;
+    height: auto; 
+}
+
+.page-learn-more .directions p {
+    margin-left: 9%;
+    font-size: 18px;
+}
+
+/* Directions Text */
+.page-learn-more .directions a {
+    margin-left: 9%;
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--maroon);
+    font-size: 17px;
+    /* padding: 5rem; */
+}
+
+.page-learn-more .directions a:hover {
+    color: var(--light-red);
+}
+
+.page-learn-more .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 11.5rem;
+    margin-top: 2rem;
+    width: 8rem;
+    height: 10rem;
+    padding: 1rem; /* Add some padding */
+}
+
+.page-learn-more .event,
+.page-learn-more .place {
+    margin-top: -42rem;
+    width: 48rem;
+    height: auto;
+    margin-left: 29.5rem;
+}
+
+.page-learn-more h1 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.page-learn-more .event .date-hours {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+    font-weight: 500;
+    gap: 1rem;
+}
+
+.page-learn-more .event img {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 2rem;
+    border: none;
+}
+
+.page-learn-more .event h2,
+.page-learn-more .place h2 {
+    font-size: 1.2rem;
+    text-decoration: underline dotted;
+    margin-bottom: 1rem;
+}
+
+.page-learn-more .place #drop-btn {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 10px solid var(--light-red); /* Light blue */
+    border-bottom: none;
+    background: none;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    margin-top: -2rem;
+    right: 56%;
+
+}
+
+.page-learn-more .place .dropdown-content {
+    visibility: hidden;
+    display: none;
+    width: 13rem;
+    height: auto;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: var(--light-red);
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.page-learn-more .place .dropdown-content p {
+    right: 0.5rem;
+}
+
+.page-learn-more .place .dropdown-content #day-header {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.page-learn-more .event .organizers {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.page-learn-more .event .organizers p {
+    background-color: var(--light-red);
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+}
+
+.page-learn-more .event h3,
+.page-learn-more .place h3 {
+    bottom: 18.5rem;
+    font-size: 1.15rem;
+    text-decoration: underline dotted;
+}
+
+.page-learn-more .event .description-text,
+.page-learn-more .place .description-text {
+    width: 700px;
+    top: 19rem;
+    margin-bottom: 5rem;
+}
+
+.page-learn-more .event .description-text p,
+.page-learn-more .place .description-text p{
+    text-indent: 2rem;
+    margin: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Place Type Info Bubble */
+.page-learn-more .event .volunteer-count,
+.page-learn-more .place .business-type {
+    background-color: var(--light-red);
+    border: 2px dashed var(--dark);
+    box-shadow: 5px 5px 8px var(--standard-shadow);
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    top: 8rem; 
+    right: 1rem;
+    text-align: center;
+}
+
+.page-learn-more .event .volunteer-count p,
+.page-learn-more .place .business-type p {
+    margin-top: -0.5rem;
+}
+
+.page-learn-more .place .hours-display p img {
+    width: 1.5rem;
+    height: auto;
+    right: 1rem; 
+    left: -3.5rem; 
+    border: none;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+
+.page-learn-more .place #contact {
+    left: 8rem;
+    font-weight: 500;
+}
+
+.page-learn-more .place #price {
+    left: 3.5rem;
+}
+
+/* edit button error message popup styling */
+
+.page-learn-more #editError-popup {
+    position: fixed;
+    background-color: var(--light-gray);
+    color: var(--black);
+    font-size: 0.6rem;
+    padding: 5vw;
+    width: 25vw;
+    max-width: 400px;
+    height: 25vh;
+    min-height: 30vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 9999;
+    border-radius: 8px
+}
+
+.page-learn-more #editError-message {
+    margin-top: 30px;
+}
+
+/* edit form popup styling */
+
+
+.page-learn-more #edit-event-popup,
+.page-learn-more #edit-volunteer-popup {
+    /*make it appear above the screen as a popup*/
+    position: fixed;
+    z-index: 9999;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    /*adds scrolling*/
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    max-height: 90vh;   
+}
+
+
+/*-------------------------------*/
+/*      EDIT PROFILE PAGE        */ 
+/*-------------------------------*/
+
+/* Edit Profile Container */
+.page-edit_profile .edit-profile-container {
+    background: var(--light-red);
+    width: 40%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .page-edit_profile .edit-profile-container {
+        width: 80%; /* Make the container take more space on small screens */
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*      USER ACCOUNT PAGE        */ 
+/*-------------------------------*/
+
+.page-user_account body {
+    font-family: var(--title-font);
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+}
+
+.page-user_account .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.page-user_account .profile-box {
+    background: var(--light-red);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px var(--standard-shadow);
+    width: 300px;
+    text-align: center;
+    position: relative;
+    padding-top: 50px; /* Add padding-top to create space for the profile picture */
+}
+
+.page-user_account .profile-box h2 {
+    margin-top: 20px; /* Add top margin to create space between picture and username */
+}
+
+.page-user_account .profile-picture {
+    position: absolute;
+    top: -130px; /* Move the profile picture higher */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make the picture round */
+    overflow: hidden; /* Ensure the image stays within the circle */
+    border: 4px solid var(--off-white); /* Optional border around the picture */
+}
+
+.page-user_account .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the circle without stretching */
+}
+
+.page-user_account .button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 15px;
+    border: none;
+    background: var(--gold);
+    color: var(--black);
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.page-user_account .button:hover {
+    background: var(--off-white)
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*         SIGNUP PAGE           */ 
+/*-------------------------------*/
+
+.page-signup body {
+    height: 100vh;  /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white); 
+    margin: 0;
+    padding: 0;
+}
+
+/* Center sign-up container */
+.page-signup .signup-container {
+    background-color:  var(--light-red);  
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px var(--standard-shadow);
+    text-align: center;
+    width: 350px;
+    max-width: 100%;
+    margin-left: 35%;
+    margin: auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.page-signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.page-signup label, 
+.page-signup input {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
+    /* border: 1px solid var(--off-white); */
+}
+
+.page-signup button:hover {
+    /* background-color: #357ABD; */
+    background-color: var(--off-white);
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*         LOGIN PAGE            */ 
+/*-------------------------------*/
+
+/* Adjustments for the form */
+.page-login .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--off-white);
+}
+
+.page-login #form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-login input[type="email"],
+.page-login input[type="password"] {
+    width: 100%; /* Ensures both inputs take up the same space */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid var(--dark);
+    display: block; /* Ensures they appear on separate lines */
+    box-sizing: border-box; /* Prevents padding from affecting width */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/*-------------------------------*/
+/*           HELP PAGE           */ 
+/*-------------------------------*/
+
+.page-help main {
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--light-red);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--standard-shadow);
+}
+
+.help-content-container {
+    background-color: var(--off-white);
+    padding: 2rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px var(--standard-shadow);
+    max-width: 1000px;
+    width: 100%;
+    margin: 20px;
+}
+
+/* Make footer stay at bottom if the content is short */
+.page-help {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-help main {
+    flex: 1;
+}
+
+.page-help .back-button {
+    display: inline-block;     
+    width: 4%;               
+    margin: 20px;              
+}

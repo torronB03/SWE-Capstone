@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Profile</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body class="page-edit_profile">
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">← Back</a>
+
+    <main>
+        <div class="edit-profile-container">
+            <h2>Edit Profile</h2>
+            <form action="LoginServlet?action=updateProfile" method="POST" id="editForm">
+                <!-- PROFILE FIELDS -->
+                <p style="text-align: center;">
+                <label for="email">Email:</label>
+                <input type="email" id="emailField" name="email" placeholder="Enter email">
+
+                <label for="name">Name:</label>
+                <input type="text" id="nameField" name="name" placeholder="Enter name">
+                </p>
+
+                <p style="text-align: center;">
+                    <label for="username">Username:</label>
+                <input type="text" id="usernameField" name="username" placeholder="Enter username">
+
+                <label for="over18">Over 18:</label>
+                <select id="over18Field" name="over18">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+                <label for="transport">Mode of Transportation:</label>
+                <select id="transportField" name="transport">
+                    <option value="Car">Car</option>
+                    <option value="Walk">Walk</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Bus">Bus</option>
+                </select>
+
+
+                <!-- PASSWORD CHANGE FIELDS -->
+                <h3>Change Password</h3>
+
+                <label for="currentPassword">Current Password:</label>
+                <input type="password" id="currentPasswordField" name="currentPassword" placeholder="Enter current password">
+
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPasswordField" name="newPassword" placeholder="Enter new password">
+
+                <label for="confirmNewPassword">Confirm New Password:</label>
+                <input type="password" id="confirmNewPasswordField" name="confirmNewPassword" placeholder="Confirm new password">
+
+                
+
+                <p style="text-align: center;">
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <!--FOOTER-->
+    <div id="footer"></div>
+
+    <script src="../js/fetch-partials.js"></script>
+    <script src="../js/edit_profile.js"></script>
+</body>
+</html>

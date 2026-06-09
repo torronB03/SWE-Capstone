@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body class="page-signup">
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <!-- JavaScript (deferred) -->
+  <script src="../js/auth-test.js" defer></script>
+
+  <!-- BACK BUTTON -->
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+
+  <!-- SIGNUP FORM -->
+  <div class="signup-container">
+    <h2>Sign Up</h2>
+
+    <form id="signupForm">
+      <input type="hidden" name="formType" value="signup" />
+
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required />
+      <small id="firstNameFeedback" class="feedback"></small>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required />
+      <small id="lastNameFeedback" class="feedback"></small>
+
+      <label for="username">Username:</label>
+      <input type="text" id="signupUsername" name="username" required />
+      <small id="usernameFeedback" class="feedback"></small>
+
+      <label for="email">Email:</label>
+      <input type="email" id="signupEmail" name="email" required />
+      <small id="emailFeedback" class="feedback"></small>
+
+      <label for="password">Password:</label>
+      <input type="password" id="signupPassword" name="password" required />
+      <small id="passwordFeedback" class="feedback"></small>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="signupConfirmPassword" name="confirmPassword" required />
+      <small id="confirmPasswordFeedback" class="feedback"></small>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- LOGIN LINK -->
+    <p>Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- HEADER/FOOTER LOADING SCRIPT -->
+  <script src="../js/fetch-partials.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Explore</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/main.css" />
+</head>
+
+<body class="page-home page-event page-explore">
+    <!-- ERROR MESSAGES -->
+    <div class="page-explore">
+        <div id="overlay" onclick="closePopup()"></div>
+        <div id="account-popup" style="display: none;">
+            <button class="close-btn" onclick="closePopup()">&times;</button>
+            <h1 id="popup-message">
+                Sign In For This Event!
+                <br />
+                <a href="../pages/login.html">Log In</a>
+            </h1>
+            <h2>
+                Don't Have An Account?
+                <br />
+                <a href="../pages/signup.html">Sign Up</a>
+            </h2>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!-- TITLE -->
+    <div class="page-explore">
+        <h1 class="exploreTitle">
+            Explore Events <br />
+            Near You!
+        </h1>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- BACK BUTTON -->
+    <a href="javascript:history.back()" class="back-button">← Back</a>
+
+    <!-- MAIN CONTENT -->
+    <div class="page-dashboard">
+        <div id="feed-container">
+            <!-- SIDEBAR -->
+            <div id="sidebarContainer">
+                <div class="filter-sidebar">
+                    <button type="button" class="filterBtn" id="showAllBtn" aria-label="Show all places">Show All</button>
+                    <!-- <button type="button" class="filterBtn" aria-label="Show saved places">Saved Places</button> -->
+                    <!-- <button type="button" class="filterBtn" aria-label="Show events I've made">Events I Planned</button> -->
+                    <!-- <button type="button" class="filterBtn" aria-label="Upcoming events">Upcoming Events</button> -->
+                    <br />
+                    <hr />
+                    <!-- <button id="displayFilter" class="filterBtn" aria-label="filters">Filter by...</button> -->
+
+                    <!-- FILTER DROPDOWN -->
+                    <div class="filter-dropdown" id="filterList">
+                        <form id="filterForm">
+                            <label><input type="checkbox" id="food-bank"> Food Banks</label>
+                            <label><input type="checkbox" id="shelter"> Shelters</label>
+                            <label><input type="checkbox" id="community-event"> Community Events</label>
+                            <label><input type="checkbox" id="medical-center"> Medical Centers & Hospitals</label>
+                            <label><input type="checkbox" id="community-center"> Community Centers</label>
+                            <label><input type="checkbox" id="volunteer-opportunity"> Volunteer Opportunities</label>
+                            <label><input type="checkbox" id="clothing-store"> Clothing Stores</label>
+                            <div class="button-group">
+                                <button type="button" id="applyBtn" class="applyBtn">Apply</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EVENT LIST AREA -->
+            <ul id="feedList">
+                <!-- JavaScript will inject feed items here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- HEADER/FOOTER PARTIAL SCRIPTS -->
+    <script src = "../js/fetch-partials.js"> </script>
+
+    <!-- EXPLORE PAGE SCRIPT -->
+    <script src="/community-resources-app/js/explore.js"></script>
+</body>
+</html>
