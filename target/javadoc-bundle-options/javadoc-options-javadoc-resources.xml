@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<javadocOptions>
+  <tags>
+    <tag>
+      <name>methods</name>
+      <head>This is a method to:</head>
+      <placement>am</placement>
+    </tag>
+    <tag>
+      <name>attributes</name>
+      <head>This attribute:</head>
+      <placement>a</placement>
+    </tag>
+  </tags>
+  <docletArtifacts>
+    <docletArtifact />
+  </docletArtifacts>
+  <tagletArtifacts>
+    <tagletArtifact />
+  </tagletArtifacts>
+  <javadocResourcesDirectory>src/main/javadoc</javadocResourcesDirectory>
+</javadocOptions>

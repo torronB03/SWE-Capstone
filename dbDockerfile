@@ -1,0 +1,16 @@
+# Start with the latest Docker Hub image for postgres
+FROM postgis/postgis:15-3.3
+
+# get our home directory so we can add sql files to it 
+ENV POSTGRES_SCRIPTS=/docker-entrypoint-initdb.d/
+
+# get initial schema generating script,
+COPY /src/sql/create_tables_v3.sql ${POSTGRES_SCRIPTS}
+COPY /src/sql/insert_scripts.sql ${POSTGRES_SCRIPTS}
+
+# Set timezone 
+ENV TZ=UTC
+
+
+
+

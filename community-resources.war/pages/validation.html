@@ -1,0 +1,145 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const signupForm = document.getElementById("signupForm");
+
+        // Username availability check with debounce
+        let usernameTimeout;
+        document.getElementById("username")?.addEventListener("input", function () {
+            const username = this.value.trim();
+            const feedback = document.getElementById("usernameFeedback");
+
+            if (username.length < 3) {
+                feedback.textContent = "Username must be at least 3 characters.";
+                feedback.style.color = "red";
+                return;
+            }
+
+            // Clear previous timeout if it exists
+            clearTimeout(usernameTimeout);
+
+            // Set a new timeout to check availability after user stops typing
+            usernameTimeout = setTimeout(async () => {
+                try {
+                    const response = await fetch(`CheckUsernameServlet?username=${encodeURIComponent(username)}`);
+                    const data = await response.json();
+
+                    if (data.available) {
+                        feedback.textContent = "Username is available!";
+                        feedback.style.color = "green";
+                    } else {
+                        feedback.textContent = "Username is already taken.";
+                        feedback.style.color = "red";
+                    }
+                } catch (error) {
+                    feedback.textContent = "Error checking username.";
+                    feedback.style.color = "red";
+                    console.error("Username check error:", error);
+                }
+            }, 500); // 500ms debounce time
+        });
+
+        // Email format check
+        document.getElementById("email")?.addEventListener("input", function () {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const feedback = document.getElementById("emailFeedback");
+
+            if (!emailPattern.test(this.value.trim())) {
+                feedback.textContent = "Invalid email format.";
+                feedback.style.color = "red";
+            } else {
+                feedback.textContent = "";
+            }
+        });
+
+        // Password strength check
+        document.getElementById("password")?.addEventListener("input", function () {
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            const password = this.value.trim();
+            const feedback = document.getElementById("passwordFeedback");
+
+            if (!passwordPattern.test(password)) {
+                feedback.textContent = "Weak password! Must be at least 8 characters, 1 uppercase, 1 lowercase, 1 number, and 1 special character.";
+                feedback.style.color = "red";
+            } else {
+                feedback.textContent = "Strong password!";
+                feedback.style.color = "green";
+            }
+
+            // Real-time feedback for password matching
+            const confirmPassword = document.getElementById("confirmPassword").value.trim();
+            const matchFeedback = document.getElementById("confirmPasswordFeedback");
+
+            if (confirmPassword && password !== confirmPassword) {
+                matchFeedback.textContent = "Passwords do not match!";
+                matchFeedback.style.color = "red";
+            } else if (confirmPassword && password === confirmPassword) {
+                matchFeedback.textContent = "Passwords match!";
+                matchFeedback.style.color = "green";
+            }
+        });
+
+        // Confirm password match check
+        document.getElementById("confirmPassword")?.addEventListener("input", function () {
+            const password = document.getElementById("password").value.trim();
+            const confirmPassword = this.value.trim();
+            const feedback = document.getElementById("confirmPasswordFeedback");
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                feedback.textContent = "Passwords do not match!";
+                feedback.style.color = "red";
+            } else {
+                feedback.textContent = "Passwords match!";
+                feedback.style.color = "green";
+            }
+        });
+
+        // Final form submission check
+        signupForm?.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const formData = {
+                firstName: document.getElementById("firstName").value.trim(),
+                lastName: document.getElementById("lastName").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                username: document.getElementById("username").value.trim(),
+                password: document.getElementById("password").value.trim(),
+                confirmPassword: document.getElementById("confirmPassword").value.trim(),
+            };
+
+            // Check validation feedback
+            const usernameColor = document.getElementById("usernameFeedback").style.color;
+            const emailText = document.getElementById("emailFeedback").textContent;
+            const passwordColor = document.getElementById("passwordFeedback").style.color;
+            const confirmPasswordColor = document.getElementById("confirmPasswordFeedback").style.color;
+
+            if (
+                usernameColor === "red" ||
+                emailText !== "" ||
+                passwordColor === "red" ||
+                confirmPasswordColor === "red"
+            ) {
+                alert("Please fix the errors before submitting.");
+                return;
+            }
+
+            try {
+                const response = await fetch("SignupServlet", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData),
+                });
+
+                const data = await response.json();
+                alert(data.message);
+
+                if (data.success) {
+                    window.location.href = "login.html";
+                }
+            } catch (error) {
+                alert("Error: Unable to connect to the server.");
+                console.error("Signup error:", error);
+            }
+        });
+    });
+</script>

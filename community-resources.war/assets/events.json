@@ -1,0 +1,45 @@
+
+{
+  "events": [
+    {
+      "id": 1,
+      "event_name": "Spring Charity Run",
+      "event_date": "2025-04-15",
+      "event_time": "08:00:00",
+      "location": "Central Park, New York",
+      "latitude": 40.785091,
+      "longitude": -73.968285,
+      "description": "A charity run to raise funds for local causes.",
+      "organizers": ["John Doe", "Jane Smith"],
+      "volunteers": ["Emily Davis", "Chris Brown", "Michael Johnson"],
+      "contact_email": "charityrun@events.com"
+    },
+    {
+      "id": 2,
+      "event_name": "Tech Talk: Cybersecurity Innovations",
+      "event_date": "2025-05-10",
+      "event_time": "14:00:00",
+      "location": "Tech Hub Auditorium",
+      "latitude": 37.774929,
+      "longitude": -122.419418,
+      "description": "A talk on the latest trends and innovations in cybersecurity.",
+      "organizers": ["Alana Bernardez", "Robert Green"],
+      "volunteers": ["Linda Lee", "Anna White"],
+      "contact_email": "cybersecurity@events.com"
+    },
+    {
+      "id": 3,
+      "event_name": "Art & Culture Exhibition",
+      "event_date": "2025-06-22",
+      "event_time": "10:00:00",
+      "location": "City Art Gallery",
+      "latitude": 34.052235,
+      "longitude": -118.243683,
+      "description": "An exhibition featuring local artists and cultural performances.",
+      "organizers": ["Samantha Brown", "David Gray"],
+      "volunteers": ["Alex Martin", "Sophia Turner", "Ethan Clark"],
+      "contact_email": "artculture@events.com"
+    }
+  ]
+}
+

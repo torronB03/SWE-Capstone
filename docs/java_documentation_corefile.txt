@@ -1,0 +1,1045 @@
+LocalDateAdapter.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\adapter\
+
+X1 Attribute
+X2 Methods
+
+/** 
+* @author June Fernandez
+* LocalDateAdapter class can translate the dates obtained from a API calls within the TestAPIServlet
+* into a uniform format (ie: "yyyy-MM-dd").
+* Allows GSON to properly serialize and deserialize any Local Date objects
+* @attributes  formatter
+* @methods  serialize, deserialize
+*/
+
+/**
+* @return Primitive of the local session date that is properly formatted
+*/
+/**
+* @return Parses the formatted date into a readable string
+*/
+
+
+
+
+
+
+LocalDateTimeAdapter.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\adapter\
+
+X1 Attribute
+X2 Methods
+
+/** 
+* @author June Fernandez
+* LocalDateTimeAdapter class can translate a combined date-time object obtained from a API calls within the TestAPIServlet
+* into a uniform format (ie: "yyyy-MM-dd'T'HH:mm:ss")
+* Allows GSON to properly serialize and deserialize any Local DateTime objects
+* @attributes  formatter
+* @methods  serialize, deserialize
+*/
+/**
+* @return Primitive of the local session date-time object that is properly formatted
+*/
+/**
+* @return Parses the formatted date-time object into a readable string
+*/
+
+
+
+
+
+LocalTimeAdapter.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\adapter\
+
+X1 Attribute
+X2 Methods
+
+/** 
+* @author June Fernandez
+* LocalTimeAdapter class can translate the time obtained from a API calls within the TestAPIServlet
+* into a uniform format (ie: "HH:mm")
+* Allows GSON to properly serialize and deserialize any Local Time objects
+* @attributes  formatter
+* @methods  serialize, deserialize
+*/
+/**
+* @return Primitive of the local session time that is properly formatted
+*/
+/**
+* @return Parses the formatted time into a readable string
+*/
+
+
+
+
+
+VolunteerOpportunityDAO.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\dao\
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), robutlerr (Amari Butler), JFernandez03 (June), atclark123 (Amore)
+* DOC last edited: 05/08 @ 03:22AM
+* VolunteerOpportunityDAO is a data-access object that interfaces the java model class for 
+* VolunteerOpportunity with its database table.
+* Allows for inserts and modifications
+* @attributes sessionConnection
+* @methods  SESSION:  VolunteerOpportunityDAO
+* @methods  OUTPUT:  getAllVolunteerOpportunities, getOrganizerForOpportunity, saveResourceForUser
+* @methods  MODIFICATIONS:  upsertOrganization, insertVolunteerOpportunity, modifyVolunteerOpportunity
+*/
+    /**
+     * @return Connects current session
+     * @param connObject
+     */
+    /**
+     * 
+     * @param orgName
+     * @param address
+     * @param contactInfo
+     * @throws SQLException
+     */
+    /**
+    * @return 'modifyVolunteerOpportunity'
+    */
+    /**
+    * @return 'getAllVolunteerOpportunities'
+    */
+    /**
+    * @return 'getOrganizerForOpportunity'
+    */
+    /**
+    * @return 'saveResourceForUser'
+    */
+
+
+
+
+
+
+CommunityEventDAO.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\dao\
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), robutlerr (Amari Butler), JFernandez03 (June), atclark123 (Amore)
+* DOC last edited: 05/08 @ 3:30AM
+* CommunityEventDAO is a data-access object that interfaces the java model class for 
+* CommunityEvents with its database table.
+* Allows for inserts and modifications
+* @attributes  sessionConnection
+* @methods  SESSION:  CommunityEventDAO
+* @methods  OUTPUT:  getCommunityEventById, getAllCommunityEvents, extractCommunityEventFromResultSet
+* @methods  MODIFICATIONS:  insertCommunityEvent, saveCommunityEventForUser
+*/
+    /*
+    *@return 'insertCommunityEvent'
+    */
+    /*
+    *@return 'getCommunityEventById'
+    */
+    /*
+    *@return 'getAllCommunityEvents'
+    */
+    /*
+    *@return 'extractCommunityEventFromResultSet'
+    */
+    /*
+    *@return 'saveResourceForUser'
+    */
+
+
+
+
+
+
+ClothingStoreDAO.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\dao\
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), robutlerr (Amari Butler), JFernandez03 (June), atclark123 (Amore)
+* DOC last edited: 05/08 @ 3:32AM
+* ClothingStoreDAO is a data-access object that interfaces the java model class for 
+* ClothingStore with its database table.
+* This is a location-based data structure; does not allow for internal modifications, but includes
+* functionality for saving to a user's profile.
+* @attributes  sessionConnection
+* @methods  SESSION:  ClothingStoreDAO
+* @methods  OUTPUT:  getAllClothingStores, getFilteredMembers
+* @methods  MODIFICATIONS:  saveClothingStoreForUser
+*/
+    /*
+    *@return 'getResourceByID_HERE'
+    */
+    /*
+    *@return 'getClothingStore'
+    */
+    /*
+    *@return 'saveResourceForUser'
+    */
+
+
+
+
+
+CommunityCenterDAO.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\dao\
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), robutlerr (Amari Butler), JFernandez03 (June), atclark123 (Amore)
+* DOC last edited: 05/08 @ 3:35AM
+* CommunityCenterDAO is a data-access object that interfaces the java model class for 
+* CommunityCenter with its database table.
+* This is a location-based data structure; does not allow for internal modifications, but includes
+* functionality for saving to a user's profile.
+* @attributes  sessionConnection
+* @methods  SESSION:  CommunityCenterDAO
+* @methods  OUTPUT:  getAllCommunityCenters, getCommunityCenter, parseJsonArray
+* @methods  MODIFICATIONS:  saveResourceForUser
+*/
+    /*
+    * @return 'getAllCommunityCenters'
+    */
+    /*
+    * @return 'getCommunityCenter'
+    */
+    /*
+    * @return 'saveResourceForUser'
+    */
+    /*
+    * @return 'parseJsonArray'
+    */
+
+
+
+
+
+MedicalCenterDAO.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\dao\
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), robutlerr (Amari Butler), JFernandez03 (June), atclark123 (Amore)
+* DOC last edited: 05/08 @ 3:38AM
+* MedicalCenterDAO is a data-access object that interfaces the java model class for 
+* MedicalCenter with its database table.
+* This is a location-based data structure; does not allow for internal modifications, but includes
+* functionality for saving to a user's profile.
+* @attributes  sessionConnection
+* @methods  SESSION:  MedicalCenterDAO
+* @methods  OUTPUT:  getAllMedicalCenters, getMedicalCenter
+* @methods  MODIFICATIONS:  saveResourceForUser
+*/
+    /*
+    * @return 'getAllMedicalCenters'
+    */
+    /*
+    * @return 'getMedicalCenter'
+    */
+    /*
+    * @return 'saveResourceForUser'
+    */
+
+
+
+
+
+ShelterDAO.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\dao\
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), robutlerr (Amari Butler), JFernandez03 (June), atclark123 (Amore)
+* DOC last edited: 05/08 @ 3:41AM
+* ShelterDAO is a data-access object that interfaces the java model class for 
+* Shelter with its database table.
+* This is a location-based data structure; does not allow for internal modifications, but includes
+* functionality for saving to a user's profile.
+* @attributes  sessionConnection
+* @methods  SESSION:  ShelterDAO
+* @methods  OUTPUT:  getAllShelters, getShelterById
+* @methods  MODIFICATIONS:  saveResourceForUser
+*/
+    /*
+    * @return 'getAllShelters'
+    */
+    /*
+    * @return 'getShelterById'
+    */
+    /*
+    * @return 'saveResourceForUser'
+    */
+
+
+
+
+
+UserDAO.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\dao\
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), JFernandez03 (June), Miklian, Jdemery110
+* DOC last edited: 05/08 @ 1:00AM
+* UserDAO is a data-access object that interfaces the java model class for 
+* UserDAO with its database table.
+* This is allows for the verification of the user and saving of the user.
+* @attributes  sessionConnection
+* @methods  SESSION:  UserDAO, ResultSetHandler
+* @methods  FETCH:  findUser (x2)
+* @methods  MODIFY:  insertUser, updateUser, convertToModel
+*/
+
+
+
+
+
+ClothingStore.java
+\Project-COSC-A451-2025-01-TR-Sw-Egrg\src\models
+
+X4 Attributes
+Xx Methods 
+
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), robutlerr (Amari Butler), JFernandez03 (June)
+* DOC last edited: 05/08 @ 04:12AM
+* ClothingStore is a class-model that represents the database entity of ClothingStore, and connects it to this data-type's DAO
+* @attributes clothingStoreDataIndex, orgName, orgDataIndex, userDataIndex, priceRange, hoursOfOperation,
+* ...... address, contactInfo, coordinateLocation, locationNotes, permanent
+* @methods  OUTPUT:  getClothingStoreDataIndex, getOrgName, getOrgDataIndex, getUserDataIndex, getPriceRange, getHoursOfOperation, getAddress, getContactInfo, getCoordinateLocation, getLocationNotes, getPermanent
+* @methods  INPUT:  setClothingStoreDataIndex, setOrgName, setOrgDataIndex, setUserDataIndex, setPriceRange, setHoursOfOperation, setAddress, setContactInfo, setCoordinateLocation, setLocationNotes, setPermanent
+*/
+    /**
+    * @return returns the incremental data of the ClothingStore entity
+    */
+    /**
+    * @return sets the incremental data of ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-name of the ClothingStore entity
+    */
+    /**
+    * @return sets the linked organization-name of ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-incremental index of the ClothingStore entity
+    */
+    /**
+    * @return sets the linked organization-incremental index of ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked user-incremental index of the ClothingStore entity
+    */
+    /**
+    * @return sets the linked user-incremental index of ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the saved price range of the ClothingStore entity
+    */
+    /**
+    * @return sets the saved price range of ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the operating hours of the ClothingStore entity
+    */
+    /**
+    * @return sets the operating hours of a ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the listed Address of the ClothingStore entity
+    */
+    /**
+    * @return sets the listed Address of an ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Contact Info of the ClothingStore entity
+    */
+    /**
+    * @return sets the Contact Info of an ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Coordinates Info of the ClothingStore entity
+    */
+    /**
+    * @return sets the Coordinates of an ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Location Notes of the ClothingStore entity
+    */
+    /**
+    * @return sets the Location Notes of an ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the permanent value of the ClothingStore entity
+    */
+    /**
+    * @return sets the permanent value of an ClothingStore object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    
+
+
+
+
+
+/**
+* @author Abernard13
+* Contributers: yellol (Alex), robutlerr (Amari Butler), JFernandez03 (June)
+* DOC last edited: 05/08 @ 04:12AM
+* CommunityCenter is a class-model that represents the database entity of CommunityCenter, and connects it to this data-type's DAO
+* @attributes ccDataPk, ccDataIndex, orgName, orgDataIndex, userDataIndex, offeredServices, hoursOfOperation,
+* ...... address, contactInfo, coordinateLocation, locationNotes, permanent
+* @methods  OUTPUT:  getClothingStoreDataIndex, getOrgName, getOrgDataIndex, getOfferedServices, getPriceRange, getHoursOfOperation, getAddress, getContactInfo, getCoordinateLocation, getLocationNotes, getPermanent
+* @methods  INPUT:  setClothingStoreDataIndex, setOrgName, setOrgDataIndex, setOfferedServices, setPriceRange, setHoursOfOperation, setAddress, setContactInfo, setCoordinateLocation, setLocationNotes, setPermanent
+*/
+    /**
+    * @return returns the primary key of the CommunityCenter entity
+    */
+    /**
+    * @return sets the primary key of CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the incremental data of the CommunityCenter entity
+    */
+    /**
+    * @return sets the incremental data of CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-name of the CommunityCenter entity
+    */
+    /**
+    * @return sets the linked organization-name of CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-incremental index of the CommunityCenter entity
+    */
+    /**
+    * @return sets the linked organization-incremental index of CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked user-incremental index of the CommunityCenter entity
+    */
+    /**
+    * @return sets the linked user-incremental index of CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the operating hours of the CommunityCenter entity
+    */
+    /**
+    * @return sets the operating hours of a CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Coordinates Info of the CommunityCenter entity
+    */
+    /**
+    * @return sets the Coordinates of an CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the listed Address of the CommunityCenter entity
+    */
+    /**
+    * @return sets the listed Address of an CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Contact Info of the CommunityCenter entity
+    */
+    /**
+    * @param sets the saved Contact Info of CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the saved service information of the CommunityCenter entity
+    */
+    /**
+    * @return sets the saved service information of CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return sets the Contact Info of an CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Location Notes of the CommunityCenter entity
+    */
+    /**
+    * @return sets the Location Notes of an CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the permanent value of the CommunityCenter entity
+    */
+    /**
+    * @return sets the permanent value of an CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return sets the listed Address of an CommunityCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+
+
+
+
+
+/**
+* DOC last edited: 05/08 @ 04:30AM
+* FoodBank is a class-model that represents the database entity of CommunityCenter, and connects it to this data-type's DAO
+* @attributes fbDataPk, fbDataIndex, orgName, orgDataIndex, userDataIndex, accommodationLimit, hoursOfOperation,
+* ...... coordinateLocation, address, contactInfo, locationNotes, permanent
+* @methods  OUTPUT:  getFbDataPk, getFbDataIndex, getOrgName, getOrgDataIndex, getUserDataIndex, getAccommodationLimit, getHoursOfOperation, getCoordinateLocation, getAddress, getContactInfo, getLocationNotes, getPermanent
+* @methods  INPUT:  setFbDataPk, setFbDataIndex, setOrgName, setOrgDataIndex, setUserDataIndex, setAccommodationLimit, setHoursOfOperation, setCoordinateLocation, setAddress, setContactInfo, setLocationNotes, setPermanent
+*/
+    /**
+    * @return returns the primary key of the FoodBank entity
+    */
+    /**
+    * @param sets the primary key of FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the incremental data of the FoodBank entity
+    */
+    /**
+    * @param sets the incremental data of FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-name of the FoodBank entity
+    */
+    /**
+    * @param sets the linked organization-name of FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-incremental index of the FoodBank entity
+    */
+    /**
+    * @param sets the linked organization-incremental index of FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked user-incremental index of the FoodBank entity
+    */
+    /**
+    * @param sets the linked user-incremental index of FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the saved accommodation limit of the FoodBank entity
+    */
+    /**
+    * @param sets the saved accommodation limit of FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the operating hours of the FoodBank entity
+    */
+    /**
+    * @param sets the operating hours of a FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Coordinates Info of the FoodBank entity
+    */
+    /**
+    * @param sets the Coordinates of an FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the listed Address of the FoodBank entity
+    */
+    /**
+    * @param sets the listed Address of an FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Contact Info of the FoodBank entity
+    */
+    /**
+    * @param sets the Contact Info of an FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Location Notes of the FoodBank entity
+    */
+    /**
+    * @param sets the Location Notes of an FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the permanent value of the FoodBank entity
+    */
+    /**
+    * @param sets the permanent value of an FoodBank object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+
+
+
+
+
+/**
+* DOC last edited: 05/08 @ 04:56AM
+* MedicalCenter is a class-model that represents the database entity of MedicalCenter, and connects it to this data-type's DAO
+* @attributes medDataPk, medDataIndex, orgName, orgDataIndex, userDataIndex, averageWaitTime, servicesProvided,
+* ...... coordinateLocation, address, contactInfo, locationNotes, permanent
+* @methods  OUTPUT:  getMedDataPk, getMedDataIndex, getOrgName, getOrgDataIndex, getUserDataIndex, getAverageWaitTime, getAddress, getContactInfo, getAddress, getServicesProvided, getCoordinateLocation, getLocationNotes, getPermanent
+* @methods  INPUT:  setMedDataPk, setMedDataIndex, setOrgName, setOrgDataIndex, setUserDataIndex, setAverageWaitTime, setAddress, setContactInfo, setAddress, setServicesProvided, setCoordinateLocation, setLocationNotes, setPermanent, setMedicalCenterLocation
+*/
+    /**
+    * @return returns the primary key of the MedicalCenter entity
+    */
+    /**
+    * @param sets the primary key of MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the incremental data of the MedicalCenter entity
+    */
+    /**
+    * @param sets the incremental data of MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-name of the MedicalCenter entity
+    */
+    /**
+    * @param sets the linked organization-name of MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-incremental index of the organizer entity
+    */
+    /**
+    * @param sets the linked organization-incremental index of MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked user-incremental index of the user entity
+    */
+    /**
+    * @param sets the linked user-incremental index of user object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the average wait time of the MedicalCenter entity
+    */
+    /**
+    * @param sets the average wait time of MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Contact Info of the MedicalCenter entity
+    */
+    /**
+    * @param sets the Contact Info of an MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the services provided by the MedicalCenter entity
+    */
+    /**
+    * @param sets the services provided by a MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Coordinates Info of the MedicalCenter entity
+    */
+    /**
+    * @param sets the Coordinates of an MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Location Notes of the MedicalCenter entity
+    */
+    /**
+    * @param sets the Location Notes of an MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the listed Address of the MedicalCenter entity
+    */
+    /**
+    * @param sets the listed Address of an MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the permanent value of the MedicalCenter entity
+    */
+    /**
+    * @param sets the permanent value of an MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @param sets the address of an MedicalCenter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+
+
+
+
+
+/**
+* DOC last edited: 05/08 @ 05:22AM
+* Shelter is a class-model that represents the database entity of Shelter, and connects it to this data-type's DAO
+* @attributes medDataPk, medDataIndex, orgName, orgDataIndex, userDataIndex, averageWaitTime, servicesProvided,
+* ...... coordinateLocation, address, contactInfo, locationNotes, permanent
+* @methods  OUTPUT:  getMedDataPk, getMedDataIndex, getOrgName, getOrgDataIndex, getUserDataIndex, getAverageWaitTime, getAddress, getContactInfo, getAddress, getServicesProvided, getCoordinateLocation, getLocationNotes, getPermanent
+* @methods  INPUT:  setMedDataPk, setMedDataIndex, setOrgName, setOrgDataIndex, setUserDataIndex, setAverageWaitTime, setAddress, setContactInfo, setAddress, setServicesProvided, setCoordinateLocation, setLocationNotes, setPermanent, setShelterLocation
+*/
+    /**
+    * @return returns the primary key of the Shelter entity
+    */
+    /**
+    * @param sets the primary key of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the incremental data of the Shelter entity
+    */
+    /**
+    * @param sets the incremental data of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-name of the Shelter entity
+    */
+    /**
+    * @param sets the linked organization-name of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-incremental index of the Shelter entity
+    */
+    /**
+    * @param sets the linked organization-incremental index of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked user-incremental index of the Shelter entity
+    */
+    /**
+    * @param sets the linked user-incremental index of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the average wait time of the Shelter entity
+    */
+    /**
+    * @param sets the average wait time of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Contact Info of the Shelter entity
+    */
+    /**
+    * @param sets the Contact Info of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the services provided by the Shelter entity
+    */
+    /**
+    * @param sets the services provided by a Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Coordinates Info of the Shelter entity
+    */
+    /**
+    * @param sets the Coordinates of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Location Notes of the Shelter entity
+    */
+    /**
+    * @param sets the Location Notes of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the listed Address of the Shelter entity
+    */
+    /**
+    * @param sets the listed Address of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the permanent value of the Shelter entity
+    */
+    /**
+    * @param sets the permanent value of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @param sets the address of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+
+
+
+
+
+/**
+* DOC last edited: 05/08 @ 05:22AM
+* Shelter is a class-model that represents the database entity of Shelter, and connects it to this data-type's DAO
+* @attributes shDataPk, shDataIndex, orgName, orgDataIndex, userDataIndex, averageWaitTime, spaceAvailable, maximumCapacity, 
+* ...... hoursOfOperation, address, contactInfo, coordinateLocation, locationNotes, permanent
+* @methods  OUTPUT:  getShDataPk, getShDataIndex, getOrgName, getOrgDataIndex, getUserDataIndex, getAverageWaitTime, getAddress, getContactInfo, getAddress, getServicesProvided, getCoordinateLocation, getLocationNotes, getPermanent
+* @methods  INPUT:  setShDataPk, setShDataIndex, setOrgName, setOrgDataIndex, setUserDataIndex, setAverageWaitTime, setAddress, setContactInfo, setAddress, setServicesProvided, setCoordinateLocation, setLocationNotes, setPermanent, setShelterLocation
+*/
+    /**
+    * @return returns the primary key of the Shelter entity
+    */
+    /**
+    * @param sets the primary key of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the incremental data of the Shelter entity
+    */
+    /**
+    * @param sets the incremental data of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-name of the Shelter entity
+    */
+    /**
+    * @param sets the linked organization-name of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-incremental index of the Shelter entity
+    */
+    /**
+    * @param sets the linked organization-incremental index of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked user-incremental index of the Shelter entity
+    */
+    /**
+    * @param sets the linked user-incremental index of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the available space of the Shelter entity
+    */
+    /**
+    * @param sets the available space of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the maximum capacity of the Shelter entity
+    */
+    /**
+    * @param sets the maximum capacity of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the hours of the Shelter entity
+    */
+    /**
+    * @param sets the hours of Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the listed Address of the Shelter entity
+    */
+    /**
+    * @param sets the listed Address of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Contact Info of the Shelter entity
+    */
+    /**
+    * @param sets the Contact Info of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Coordinates Info of the Shelter entity
+    */
+    /**
+    * @param sets the Coordinates of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Location Notes of the Shelter entity
+    */
+    /**
+    * @param sets the Location Notes of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the permanent value of the Shelter entity
+    */
+    /**
+    * @param sets the permanent value of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @param sets the address of an Shelter object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+
+
+
+
+
+/**
+* DOC last edited: 05/08 @ 05:22AM
+* CommunityEvent is a class-model that represents the database entity of CommunityEvent, and connects it to this data-type's DAO
+* @attributes shDataPk, shDataIndex, orgName, orgDataIndex, userDataIndex, averageWaitTime, spaceAvailable, maximumCapacity, 
+* ...... hoursOfOperation, address, contactInfo, coordinateLocation, locationNotes, permanent
+* @methods  OUTPUT:  getShDataPk, getShDataIndex, getOrgName, getOrgDataIndex, getUserDataIndex, getAverageWaitTime, getAddress, getContactInfo, getAddress, getServicesProvided, getCoordinateLocation, getLocationNotes, getPermanent
+* @methods  INPUT:  setShDataPk, setShDataIndex, setOrgName, setOrgDataIndex, setUserDataIndex, setAverageWaitTime, setAddress, setContactInfo, setAddress, setServicesProvided, setCoordinateLocation, setLocationNotes, setPermanent, setCommunityEventLocation
+*/
+    /**
+    * @return returns the primary key of the CommunityEvent entity
+    */
+    /**
+    * @param sets the primary key of CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the incremental data of the CommunityEvent entity
+    */
+    /**
+    * @param sets the incremental data of CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-name of the CommunityEvent entity
+    */
+    /**
+    * @param sets the linked organization-name of CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked organization-incremental index of the CommunityEvent entity
+    */
+    /**
+    * @param sets the linked organization-incremental index of CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the linked user-incremental index of the CommunityEvent entity
+    */
+    /**
+    * @param sets the linked user-incremental index of CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the available space of the CommunityEvent entity
+    */
+    /**
+    * @param sets the available space of CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the maximum capacity of the CommunityEvent entity
+    */
+    /**
+    * @param sets the maximum capacity of CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the hours of the CommunityEvent entity
+    */
+    /**
+    * @param sets the hours of CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the listed Address of the CommunityEvent entity
+    */
+    /**
+    * @param sets the listed Address of an CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Contact Info of the CommunityEvent entity
+    */
+    /**
+    * @param sets the Contact Info of an CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Coordinates Info of the CommunityEvent entity
+    */
+    /**
+    * @param sets the Coordinates of an CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the Location Notes of the CommunityEvent entity
+    */
+    /**
+    * @param sets the Location Notes of an CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @return returns the permanent value of the CommunityEvent entity
+    */
+    /**
+    * @param sets the permanent value of an CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+    /**
+    * @param sets the address of an CommunityEvent object as it exists (to interface with 
+    * the database entry in the DAO linked list)
+    */
+
+
+
+
+
+/**
+* DOC last edited: 05/08 @ 05:22AM
+* Organization is a class-model that represents the database entity of CommunityEvent, and connects it to this data-type's DAO
+* @attributes orgDataIndex, orgName, address, contactInfo, volunteerOpportunities, clothingStores, foodBanks, shelters, medCenters, communityCenters
+* @methods  OUTPUT:  getOrgDataIndex, getOrgName, getOrgName, getAddress, getContactInfo, getVolunteerOpportunities, getClothingStores, getFoodBanks, getShelters, getMedCenters, getCommunityCenters
+* @methods  INPUT:  setOrgDataIndex, setOrgName, setOrgName, setAddress, setContactInfo, setVolunteerOpportunities, setClothingStores, setFoodBanks, setShelters, setMedCenters, setCommunityCenters
+*/
+
+
+
+
+/**
+* VolunteerOpportunity is a class-model that represents the database entity of VolunteerOpportunity, and connects it to this data-type's DAO
+* @attributes voDataIndex,voDataPk, orgName, userDataIndex, voDescription, eventDate, ongoing, requirementsJson, coordinateLocation, address, contactInfo, locationNotes, permanent
+* @methods  OUTPUT:  getVoDataIndex, getVoDataPk, getOrgName, getUserDataIndex, getVoDescription, getEventDate, isOngoing, getRequirementsJson, getCoordinateLocation, getAddress, getContactInfo, getLocationNotes, getPermanent
+* @methods  INPUT:  setVoDataIndex, setVoDataPk, setOrgName, setUserDataIndex, setVoDescription, setEventDate, setOngoing, setRequirementsJson, setCoordinateLocation, setAddress, setContactInfo, setLocationNotes, setPermanent
+*/
+
+
+
+/**
+* SessionConnection is a class-model that represents the database entity of CommunityEvent, and connects it to this data-type's DAO
+* @attributes address, creationTime, sessionConnection, authenticated
+* @methods  OUTPUT:  getAddress, getTimecode, getAuth
+* @methods  MODIFY:  createConnectionforSession, endConnection
+*/
+
+
+/**
+* @return
+*/

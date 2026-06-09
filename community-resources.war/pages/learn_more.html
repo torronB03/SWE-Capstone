@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Learn More</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body class="page-learn-more">
+
+  <!-- HEADER -->
+  <div id="header"></div>
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+
+  <!-- MAP + DETAILS SIDE BY SIDE -->
+  <div class="map-info-wrapper">
+    <div class="map-section">
+      <div id="map" style="width: 100%; height: 250px; border-radius: 8px;"></div>
+      <p id="addressText">[Address Line 1]<br>[Address Line 2]<br>New Orleans, LA 70118</p>
+      <a id="directionsLink" href="#" target="_blank" class="directions-link">Get Directions</a>
+    </div>
+
+    <div class="details-section" id="details-section">
+      <h1 id="orgName">Event Title</h1>
+      <h2 id="eventDate">Month D, YYYY</h2>
+      <h3 id="eventTime">HH:MM AM/PM</h3>
+      <p><strong>Organizer:</strong> <span id="organizerName">Org Name</span></p>
+      <p id="orgDescription">[Event description]</p>
+      <div class="button-row" id="dynamic-buttons"></div>
+    </div>
+  </div>
+
+  <!-- POPUPS -->
+  <div id="overlay" onclick="closePopup()"></div>
+  <div id="account-popup" style="display: none;">
+    <button class="close-btn" onclick="closePopup()">&times;</button>
+    <h1 id="login-message">Sign In For This Event!<br><a href="../pages/login.html">Log In</a></h1>
+    <h2 id="signup-message">Don't Have An Account?<br><a href="../pages/signup.html">Sign Up</a></h2>
+  </div>
+
+  <div id="editError-popup" style="display: none;">
+    <button class="close-btn" onclick="closePopup()">&times;</button>
+    <h1 id="editError-message">You Must Be The Creator To Edit!</h1>
+  </div>
+
+  <!-- HIDDEN FORMS -->
+  <div id="edit-event-popup" style="display: none;">
+    <form id="eventForm" action="/api/edit-event" method="post">
+      <input type="submit" value="Edit Event" />
+    </form>
+  </div>
+  <div id="edit-volunteer-popup" style="display: none;">
+    <form id="volunteerForm" action="/api/edit-volunteer" method="post">
+      <input type="submit" value="Edit Volunteer Opportunity" />
+    </form>
+  </div>
+
+  <!-- EVENT CONTAINER (unused but kept for compatibility) -->
+  <div id="event-container"></div>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../js/fetch-partials.js"></script>
+  <script src="../js/learn_more.js" defer></script>
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIdo4bn5ZvsTvPEj9OwDGMK8dc9kOnrpc&callback=initMap">
+  </script>
+</body>
+</html>

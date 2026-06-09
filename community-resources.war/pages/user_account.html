@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body class="page-user_account">
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">← Back</a>
+    <div class="container">
+        
+        <div class="profile-box">
+            <!-- Profile Picture -->
+            <div class=" profile-picture ">
+                <img src="../assets/profile.png" alt=" Profile Picture ">
+            </div>
+
+            <!-- Username Section -->
+            <h2 id="username">Username</h2>
+            <p id="email">Email@email.com</p>
+            <p>[Volunteer] OR [Business] OR [Organization]</p>
+            <p id="name">[Name]</p>
+            <p id="over18">Over 18: [Y/N]</p>
+            <p id="transport">Mode of Transport: [Car/Walk/Bike/Bus]</p>
+            <a href="../pages/edit_profile.html" class="button">Edit Profile</a>
+            <a href="../pages/dashboard.html" class="button">Dashboard -></a>
+            <a href="../user-api/logout" class="button" id="logOut">Sign Out</a>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <div id="footer"></div>
+
+    <!-- Header and Footer Fetch Scripts -->
+    <script src="../js/fetch-partials.js"></script>
+
+    <!-- Log out handler -->
+    <script>
+        document.getElementById("logOut").addEventListener("click", (event) => {
+            event.preventDefault();
+            // fetching it doesn't really give you a response, just destroys httpsession data + the cookie
+            fetch("../user-api/logout")
+            // redirect to home
+            window.location.href = "../pages/home.html";
+        });
+    </script>
+
+    <script src="../js/user_account.js"></script>
+
+</body>
+</html>

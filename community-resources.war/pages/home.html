@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css"> 
+</head>
+
+
+
+<body class="page-home page-event">
+    <!--HEADER-->
+
+    <div id="header"></div>
+      
+    <!--HOME TITLE-->
+    
+    <div id="bg">
+        <!-- <h1 class="homeTitle">
+            COMMUNITY 
+            <br>
+            OUTREACH 
+            <br>
+            PROJECT
+        </h1>
+    
+        <p class="homeTitle">
+            Establish connections.
+            <br>
+            Get the help you need.
+            <br>
+            Volunteer.
+        </p> -->
+    </div>
+    <div class="overlay"></div>
+
+    <!--SEARCH BAR-->
+    <form class="search" action="../pages/search.html" method="GET">
+        <input type="text" id="home-search-bar" name="query" placeholder="Search for nearby resources" aria-label="Search for resources">
+        <button type="submit" aria-label="Submit search" style="width: 54px; height: 52px;">
+            <img src="../assets/searchIcon.png" alt="Search Icon" style="width: 40px; height: 40px;">
+        </button>
+    </form>
+
+    <!--QUICKVIEW FEEDS-->
+    <h2>Explore the various upcoming events!</h2>
+
+    <div id="feed-container">
+        <div class="button-toggle">
+            <button type="button" id="displayEvents" class="active" aria-label="Show community events">Events</button>
+            <button type="button" id="displayVolunteer" aria-label="Show volunteer opportunities">Volunteer Opportunities</button>
+        </div>
+
+        <div id="feedList">
+            <!-- Events will be dynamically loaded here -->
+            <div id="eventFeed"></div>
+            <div id="volunteerFeed"></div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <div id="footer"></div>
+
+    <!-- Header and Footer Fetch Scripts -->
+    <script src="../js/fetch-partials.js"></script>
+    
+    <script src="../js/home.js"></script>
+</body>
+</html>

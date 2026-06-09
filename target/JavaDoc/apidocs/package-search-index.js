@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"adapter"},{"l":"All Packages","u":"allpackages-index.html"},{"l":"controller"},{"l":"dao"},{"l":"models"},{"l":"utils"}];updateSearchResults();

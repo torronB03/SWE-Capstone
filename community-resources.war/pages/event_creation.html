@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Event</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body class="page-event">
+  <!-- HEADER -->
+  <div id="header"></div>
+
+  <a href="javascript:history.back()" class="back-button">← Back</a>
+
+  <h1 id="formTitle">Create New Event</h1>
+  <div class="container">
+    <div class="button-toggle">
+      <button id="volunteerBtn">Volunteer</button>
+      <button id="eventBtn" class="active">Event</button>
+    </div>
+
+    <!-- Volunteer Form -->
+    <form id="volunteerForm" action="/community-resources-app/api/create-volunteer" data-redirect-url="/community-resources-app/pages/volunteer_created.html" method="POST">
+      <input type="hidden" name="formType" value="volunteer" />
+      <label for="opportunityName">Opportunity Name:</label>
+      <input type="text" id="opportunityName" name="opportunityName" required />
+
+      <label for="newOrganizerVolunteer">Organizer(s):</label>
+      <input type="text" id="newOrganizerVolunteer" name="newOrganizerVolunteer" placeholder="Enter Organizer Name" />
+      <button type="button" id="addOrganizerBtnVolunteer">+</button>
+      <div id="organizersListVolunteer"></div>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="addressLine1">Address Line 1:</label>
+      <input type="text" id="addressLine1" name="addressLine1" required />
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required />
+
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required />
+
+      <label for="zipcode">Zipcode:</label>
+      <input type="text" id="zip" name="zip" required />
+
+      <label for="volunteersNeeded">Number of Volunteers Needed:</label>
+      <input type="number" id="volunteersNeeded" name="volunteersNeeded" min="1" required />
+
+      <label for="newVolunteer">Already have volunteers?</label>
+      <input type="text" id="newVolunteer" name="newVolunteer" placeholder="Enter Volunteer Name" />
+      <button type="button" id="addVolunteerBtn">+</button>
+      <div id="volunteersList"></div>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+      <label for="contact-info">Contact Info:</label>
+      <input type="text" id="contact-info" name="contact-info" required>
+
+      <input type="submit" value="Create Volunteer Opportunity" />
+    </form>
+
+    <!-- Event Form -->
+    <form id="eventForm" action="/community-resources-app/api/create-event" data-redirect-url="/community-resources-app/pages/event_created.html" method="POST" style="display: none;">
+      <input type="hidden" name="formType" value="event" />
+
+      <label for="eventName">Event Name:</label>
+      <input type="text" id="eventName" name="eventName" required />
+
+      <label for="newOrganizerEvent">Organizer(s):</label>
+      <input type="text" id="newOrganizerEvent" name="eOrganizerName" placeholder="Enter Organizer Name" />
+      <button type="button" id="addOrganizerBtnEvent">+</button>
+      <div id="organizersListEvent"></div>
+
+      <label for="eventDate">Date:</label>
+      <input type="date" id="eventDate" name="eventDate" required />
+
+      <label for="eventTime">Time:</label>
+      <input type="time" id="eventTime" name="eventTime" required />
+
+      <label for="eventAddress1">Address Line 1:</label>
+      <input type="text" id="eventAddress1" name="eventAddress1" required />
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="eventCity" required />
+
+      <label for="state">State:</label>
+      <input type="text" id="state" name="eventState" required />
+
+      <label for="zipcode">Zipcode:</label>
+      <input type="text" id="zip" name="eventZipcode" required />
+
+      <label for="eventDescription">Description:</label>
+      <textarea id="eventDescription" name="eventDescription" rows="4" required></textarea>
+
+      <input type="submit" value="Create Event" />
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+  <!--FOOTER-->
+  <div id="footer"></div>
+
+  <!-- Header and Footer Fetch Scripts -->
+  <script src="../js/fetch-partials.js"></script>
+  <script src="../js/event_script.js"></script>
+
+</body>
+</html>

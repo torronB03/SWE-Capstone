@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Search - Community Outreach Project</title>
+      
+        <!-- General styles -->
+        <link rel="stylesheet" href="../styles/main.css" />
+      
+        <!-- Leaflet Stylesheet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+        
+        <!-- Leaflet Script -->
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+      </head>
+      
+<body class="page-search">
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <!-- Back Button -->
+    <a href="javascript:history.back()" class="back-button">← Back</a>
+    
+    <script>
+        // This function will navigate the user to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+      
+      
+
+<main>
+    <div class="search-bar-wrapper">
+        <input type="text" id="search-bar" placeholder="Search for…" />
+        <button id="search-button">Search</button>
+    </div>
+
+    <section id="search-results">
+        <!-- Results will be displayed here -->
+    </section>
+</main>
+
+<!--FOOTER-->
+<div id="footer"></div>
+
+<!-- Header and Footer Fetch Scripts -->
+<script src="../js/fetch-partials.js"></script>
+
+<!-- Leaflet JS -->
+<script src="../js/https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>  <!-- This is not going to compile since it's link. -->
+
+<script>
+    document.getElementById("search-button").addEventListener("click", function () {
+        const query = document.getElementById("search-bar").value.trim();
+        if (query !== "") {
+            window.location.href = `../pages/search.html?query=${encodeURIComponent(query)}`;
+        }
+    });
+
+    document.getElementById("search-bar").addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("search-button").click();
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get("query");
+
+        if (query) {
+            document.getElementById("search-bar").value = query;
+            fetchSearchResults(query);
+        }
+    });
+
+    // Fetch and filter events based on the search query
+    function fetchSearchResults(query) {
+        fetch('/community-resources-app/api/all-data')
+            .then(response => response.json())
+            .then(data => {
+                // Combine all possible event types into a single array
+                const events = [
+                    ...(data.events || []),
+                    ...(data.foodbanks || []),
+                    ...(data.shelters || []),
+                    ...(data.medical_centers || []),
+                    ...(data.community_centers || []),
+                    ...(data.clothing_stores || []),
+                    ...(data.volunteer_opportunities || [])
+                ];
+
+                // Filter events based on the query (search by title)
+                const results = events.filter(event =>
+                    (event.name && event.name.toLowerCase().includes(query.toLowerCase())) ||
+                    (event.title && event.title.toLowerCase().includes(query.toLowerCase())) ||
+                    (event.orgName && event.orgName.toLowerCase().includes(query.toLowerCase()))
+                );
+
+                // Get the results container and clear previous results
+                const resultsContainer = document.getElementById("search-results");
+                resultsContainer.innerHTML = "";
+
+                // Check if no results were found
+                if (results.length === 0) {
+                    resultsContainer.innerHTML = "<p>No matching events found.</p>";
+                    return;
+                }
+
+                // Render the search results as a list
+                results.forEach(event => {
+                    const listItem = document.createElement("div");
+                    listItem.classList.add("result-item");
+                    listItem.innerHTML = `
+                        <h3>${event.name || event.title || event.orgName || 'Untitled'}</h3>
+                        <p><strong>Date:</strong> ${event.eventDate || 'N/A'}</p>
+                        <p><strong>Address:</strong> ${event.address || 'N/A'}</p>
+                        <p><strong>Description:</strong> ${event.description || 'No description available.'}</p>
+                        <hr>
+                    `;
+                    resultsContainer.appendChild(listItem);
+                });
+            })
+            .catch(error => {
+                console.error("Error fetching search results:", error);
+            });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+
+
+<body class="page-home page-event page-dashboard">
+    
+    <!--HEADER-->
+    <div id="header"></div>
+
+    <script>
+        // This function will navigate the user to the previous page
+        function goBack() {
+            window.history.back();
+        }
+      </script>
+      
+    
+    <!--HOME TITLE-->
+    
+    
+    <div class="page-dashboard">
+        <!-- <h1 class="homeTitle">
+            Welcome back, 
+        </h1> -->
+        <h2 class="homeTitle" id="userGreeting">
+            Welcome back, [USER'S FIRST NAME]
+        </h2>
+    </div>
+    <div class="overlay"></div>
+
+
+    <!-- MAIN EVENTS-->
+
+    <div class="page-dashboard">
+
+        <div id="upcomingEventContainer">
+            <h3 class="homeTitle">
+                Here are your upcoming events: 
+            </h3>
+            
+            <div id="upcomingEvent">
+                <!-- Loads from script. will be listed as empty for now -->
+                <p id="eventContainerText">
+                    It doesn't seem like you have signed up for any events yet. Go to the Search page to start getting involved!
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--QUICKVIEW FEEDS-->
+    <div class="page-dashboard">
+    <div id="feed-container">
+        <!--SIDE BAR-->
+
+        <!-- <div class="page-dashboard">
+            <div id="filterList" class="filter-dropdown">
+                <form id="filterForm">
+                    <label><input type="checkbox" id="food-bank"> Food Banks</label>
+                    <label><input type="checkbox" id="shelter"> Shelters</label>
+                    <label><input type="checkbox" id="community-event"> Community Events</label>
+                    <label><input type="checkbox" id="medical-center"> Medical Centers & Hospitals</label>
+                    <label><input type="checkbox" id="community-center"> Community Centers</label>
+                    <label><input type="checkbox" id="volunteer-opportunity"> Volunteer Opportunities</label>
+                    <label><input type="checkbox" id="clothing-store"> Clothing Stores</label>
+                    <label><input type="checkbox" id="saved"> Saved</label>
+                    <div class="button-group">
+                        <button type="button" id="applyBtn" class="applyBtn">Apply</button>
+                        <button type="button" id="showAllBtn" class="filterBtn">Show All</button>
+                    </div>
+                </form>
+            </div>
+            <ul id="feedList"></ul>
+        </div> -->
+        <div id="feed-container">
+            <!-- SIDEBAR -->
+            <div id="sidebarContainer">
+                <div class="filter-sidebar">
+                    <button type="button" class="filterBtn" id="showAllBtn" aria-label="Show all places">Show All</button>
+                    <!-- <button type="button" class="filterBtn" aria-label="Show saved places">Saved Places</button> -->
+                    <!-- <button type="button" class="filterBtn" aria-label="Show events I've made">Events I Planned</button> -->
+                    <!-- <button type="button" class="filterBtn" aria-label="Upcoming events">Upcoming Events</button> -->
+                    <br />
+                    <hr />
+                    <!-- <button id="displayFilter" class="filterBtn" aria-label="filters">Filter by...</button> -->
+
+                    <!-- FILTER DROPDOWN -->
+                    <div class="filter-dropdown" id="filterList">
+                        <form id="filterForm">
+                            <label><input type="checkbox" id="food-bank"> Food Banks</label>
+                            <label><input type="checkbox" id="shelter"> Shelters</label>
+                            <label><input type="checkbox" id="community-event"> Community Events</label>
+                            <label><input type="checkbox" id="medical-center"> Medical Centers & Hospitals</label>
+                            <label><input type="checkbox" id="community-center"> Community Centers</label>
+                            <label><input type="checkbox" id="volunteer-opportunity"> Volunteer Opportunities</label>
+                            <label><input type="checkbox" id="clothing-store"> Clothing Stores</label>
+                            <label><input type="checkbox" id="saved-events"> SAVED EVENTS </label>
+                            <div class="button-group">
+                                <button type="button" id="applyBtn" class="applyBtn">Apply</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="feedList">
+            <!-- Events will be dynamically loaded here -->
+            <div id="eventFeed"></div>
+            <div id="volunteerFeed"></div>
+        </div>
+    </div>
+
+    <!--FOOTER-->
+    <div id="footer"></div>
+
+    <!-- Header and Footer Fetch Scripts -->
+    <script src="../js/fetch-partials.js"></script>
+
+    <script src="../js/dashboard.js"></script>
+
+</body>
+</html>

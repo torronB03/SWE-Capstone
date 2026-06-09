@@ -1,0 +1,36 @@
+services:
+  db:
+    build: 
+      context: .
+      dockerfile: dbDockerfile  
+    container_name: cr-db
+    environment:
+      POSTGRES_USER: ${DB_USER} # pulled from .env
+      POSTGRES_PASSWORD: ${DB_PASS} # pulled from .env
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./src/sql:/sql
+      - ./src/sql/data:/data
+    networks:
+      - backend
+
+  tomcat:
+    build:
+      context: .
+      dockerfile: tomcatDockerfile
+    container_name: cr-app
+    environment: 
+      DB_USER: ${DB_USER} 
+      DB_PASS: ${DB_PASS} 
+      DB_NAME: ${DB_NAME}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks: 
+      - backend
+    
+networks:
+  backend:
