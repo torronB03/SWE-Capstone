@@ -1,0 +1,21 @@
+
+# Use a specific stable version of Tomcat with Java 17 support
+FROM tomcat:10.1-jdk17-temurin
+
+# Set environment variable for clarity (not strictly necessary)
+
+ENV CATALINA_HOME /usr/local/tomcat
+
+# Metadata label
+LABEL maintainer=cosca451-2020
+
+# Copy WAR file into Tomcat's webapps folder to auto-deploy
+ADD community-resources-app.war ${CATALINA_HOME}/webapps/
+
+# Expose the Tomcat port
+EXPOSE 8080
+
+
+# Start Tomcat when the container launches
+
+CMD ["catalina.sh", "run"]

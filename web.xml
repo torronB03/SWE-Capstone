@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <!-- FormHandlerServlet -->
+    <servlet>
+        <servlet-name>FormHandlerServlet</servlet-name>
+        <servlet-class>controller.FormHandlerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FormHandlerServlet</servlet-name>
+        <url-pattern>/FormHandlerServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- PageRouterServlet -->
+    <servlet>
+        <servlet-name>PageRouterServlet</servlet-name>
+        <servlet-class>controller.PageRouterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PageRouterServlet</servlet-name>
+        <url-pattern>/PageRouterServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- SignupTestServlet -->
+    <servlet>
+        <servlet-name>SignupTestServlet</servlet-name>
+        <servlet-class>controller.SignupTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignupTestServlet</servlet-name>
+        <url-pattern>/SignupTestServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
